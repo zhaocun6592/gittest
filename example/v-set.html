@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-extend</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+  
+</head>
+<body>
+    <h1>vue-set</h1>
+    <hr>
+    
+    <div id="cun" >
+        <ul>
+            <li v-for='item  in arr'>{{item}}</li>
+
+        </ul>
+      
+    </div> 
+    <button onclick="cun()">加</button>
+    <script type="text/javascript">  
+        var dataNum={
+            name:'cun',
+            age:18,
+            arr:[5,6,8]
+        }
+        function cun(){
+            //dataNum.age++
+            //app.age++
+            Vue.set(app.arr,2,100);
+        }
+        var app = new Vue({
+            el:'#cun',
+            data:dataNum,
+            methods:{
+                add:function(){
+                    this.num++;
+                }
+            }
+            
+        })
+      
+  
+    
+
+    </script>
+</body>
+</html>

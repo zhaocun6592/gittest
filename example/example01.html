@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example methods</title>
+    <script type="text/javascript" src='../assets/js/vue.js'></script>
+    <script type="text/javascript" src='../assets/js/jquery-1.10.1.min.js'></script>
+</head>
+<body>
+    <h1>example methods</h1>
+    <div id="cun">
+        {{message}}
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#cun',
+            data:{
+                message:'这是一个简单的vue实例11'
+            },
+            mounted:function(){
+                $('#cun').html('我是JQ')
+            },
+            methods:{
+                add:function(){
+                    console.log('在外部调用了构造器内部的数据')
+                }
+            }
+        }   
+
+    );
+     app.add();
+    </script>
+</body>
+</html>

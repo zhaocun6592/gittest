@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extend</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>extend</h1>
+    <div id="app">
+        {{num}}
+       <p><button @click="add">加我</button></p>
+    </div>
+ 
+    <script type="text/javascript"> 
+      var extendObj={
+        updated:function(){
+          console.log('我是扩展的updated')
+        }
+      }
+       var app = new Vue({
+        el:'#app',
+        data:{
+           num:14,
+         
+        },
+        methods:{
+          add:function(){
+            console.log('我是原生的方法')
+            return this.num++;
+        
+          }
+        },
+        extends:extendObj  // 只能有一个扩展对象
+    });
+
+
+    </script>

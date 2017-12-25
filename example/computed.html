@@ -1,0 +1,77 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件的标签</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>组件的标签</h1>
+    <div id="app">
+        <li v-for="item in newsSort">{{item}}</li>  
+        <div style="color: red">{{newPrice}}</div>                   
+    </div>
+
+    <script type="text/javascript"> 
+        var newList=[1,2,3,4,5]
+       var app = new Vue({
+        el:'#app',
+        data:{
+            mess:'bname',
+            con:'212310',
+            price:100,
+            news:newList
+        },
+        computed:{
+            newPrice:function(){
+                return this.price='￥'+this.price+'元'
+            },
+            newsSort:function(){
+                return this.news.reverse();
+            }
+        }
+        
+    });
+    </script>
+</body>
+</html>
+ -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件的标签</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>组件的标签</h1>
+    <div id="cun">
+        <div>{{newText}}</div>
+       <ul>
+           <li v-for="item in newNum">{{item}}</li> 
+        </ul>
+
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#cun",
+            data:{
+                num:[5,6,8,7],
+                text:20
+
+            },
+            computed:{
+                newText:function(){
+                    return this.text=this.text+"￥"
+                },
+                newNum:function(){
+                    return this.num.reverse();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 自定义指令</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+  
+</head>
+<body>
+    <h1>v-pre v-cloak</h1>
+    <hr>
+    <div id="cun" >
+      <div v-cun='color'>{{num}}</div>
+        <button @click='add' >点击</button>
+    </div>
+    <script type="text/javascript">  
+    Vue.directive('cun',{
+        bind:function(el,binging){//被绑定
+             console.log("11");
+        },
+        inserted:function(){//绑定到节点
+              console.log('2 - inserted');
+        },
+        update:function(){//组件更新
+              console.log('3 - update');
+        },
+        componentUpdated:function(){//组件更新完成
+              console.log('4 - componentUpdated');
+        },
+        unbind:function(){//解绑
+              console.log('1 - bind');
+        }
+    })
+
+        var app = new Vue({
+            el:'#cun',
+            data:{
+              num:10,
+                color:'red'
+            },
+            methods:{
+                add:function(){
+                    this.num++;
+                }
+            }
+            
+        }
+      
+    )
+    
+
+    </script>
+</body>
+</html>
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 自定义指令</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+  
+</head>
+<body>
+    <div id="cun">
+        <div v-cun="color">{{num}}</div>
+        <button @click="add">加</button>
+    </div>
+    <script type="text/javascript">
+     Vue.directive('cun',function(el,binding){
+        console.log(el);
+         console.log(binding);
+        console.log(binding.name);
+        console.log(binding.value);
+        console.log(binding.expression);
+        el.style="color:"+binding.value+"";
+     })
+
+
+    var app = new Vue({
+        el:'#cun',
+        data:{
+            num:1,
+            color:"red"
+        },
+        methods:{
+            add:function(){
+                this.num++;
+            }
+        }
+    })
+
+
+
+    </script>
+</body>
+</html> -->

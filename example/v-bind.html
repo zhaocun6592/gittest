@@ -1,0 +1,108 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind 绑定标签属性</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+     <style type="text/css">
+        .classA{
+            color: red;
+        }
+         .classB{
+            font-size: 30px;
+        } 
+
+     </style>
+</head>
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="cun" >
+
+        <img :src="img" style="width: 200px">
+        <div :class='{classA:isOK}'>class绑定事件</div>
+        <div :class='[classA,classB]'>classA,classB</div>
+        <div :class='isOK?classA:classB'>三元运算符</div>  
+        <div :style='{color:red,fontSize:font}'>绑定style</div>   
+         <div :style='style'>绑定style</div> 
+
+
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#cun',
+            data:{
+              message:'zhaoyancun',
+              img:"../guo2.jpg",
+              className:'classA',
+              classA:'classA',
+              classB:"classB",
+              isOK:true,
+              red:'blue',
+              font:'50px',
+              style:{
+                color:'pink',
+                fontSize:'12px'  // style绑定对象
+              }
+            },
+            
+        }
+
+    );
+    
+    </script>
+</body>
+</html> 
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind 绑定标签属性</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+     <style type="text/css">
+        .classRed{
+            color: red;
+        }
+         .classFont{
+            font-size: 30px;
+        } 
+
+     </style>
+</head>
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="cun" >
+
+    <img :src="[src]" :style="{width:width}" />
+    <div :class="{classRed:isTrue}">变红</div>
+    <div :class="isTrue?classRed:classFont">变红</div>
+    <div :style="style">绑定style属性值</div>
+
+    </div>
+    <script type="text/javascript">
+    
+
+    var  app = new Vue({
+        el:"#cun",
+        data:{
+          src:"../guo2.jpg",
+          isTrue:false,
+          width:"200px",
+          classRed:"classRed",
+          classFont:"classFont",
+          style:{
+            color:"blue",
+            fontSize:"25px"
+          }
+
+        }
+
+      })
+    
+    </script>
+</body>
+</html> -->

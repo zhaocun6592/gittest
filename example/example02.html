@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example 扩展</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <h1>example 扩展</h1>
+    <div id="zhao">
+        {{message}}
+        <p><button @click="add">加加</button></p>
+    </div>
+
+    <button onclick="add1()">加我</button>
+    <script type="text/javascript">
+   /*     var app = new Vue({
+            el:'#cun',
+            data:{
+                message:'这是一个简单的vue实例11'
+            },
+        
+            methods:{
+                add:function(){
+                    console.log('在外部调用了构造器内部的数据')
+                }
+            }
+        }   
+
+    );
+    */
+    var vuedemo =Vue.extend({
+        template:`<p>{{message}}</p>`,
+        data:function(){
+            return{
+                message:'我是输出的目录'
+            }
+       
+        },
+         destroyed:function(){
+            console.log('我已经销毁')
+        }
+        })
+
+    var vm=new vuedemo().$mount("#zhao")
+    function add1(){
+        vm.$destroy();
+    }
+
+    </script>
+</body>
+</html>

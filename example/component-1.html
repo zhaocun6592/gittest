@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+     <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="cun">
+        <cun1></cun1>
+         <cun2></cun2>
+    </div>
+   
+    <script type="text/javascript">
+    Vue.component("cun2",{
+            template:`<p style="color:blue">这是全局的conponents</p>`
+        
+    })
+
+    var app = new Vue({
+        el:"#cun",
+        data:{
+            message:'data的信息'
+        },
+        components:{
+            cun1:{
+                template:`<p style="color:red">这是内部的组件</p>`
+            }
+        }
+    })
+
+
+    </script>
+</body>
+</html>

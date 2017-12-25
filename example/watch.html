@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>watch</h1>
+    <div id="app">
+          <p>今日温度：{{temperature}}度</p> 
+          <p>穿衣建议：{{clothing}}</p> 
+          <p>
+            <button @click="add">升温</button>
+            <button @click="sub">降温</button>
+          </p>
+    </div>
+ 
+    <script type="text/javascript"> 
+       
+       var app = new Vue({
+        el:'#app',
+        data:{
+           temperature:14,
+           clothing:'不冷不热，夹克出行'
+        },
+        methods:{
+          add:function(){
+            return this.temperature+=5
+          },
+          sub:function(){
+            return this.temperature-=5
+          }
+
+        },
+        watch:{
+          temperature:function(a,b){
+            
+          }
+        }
+        
+    });
+
+       app.$watch('temperature',function(newVal,oldVal){
+         if (newVal>25) {
+              this.clothing="该穿短袖了"
+            }else if(newVal<0){
+               this.clothing="该穿羽绒服了"
+            }else{
+               this.clothing="不冷不热，夹克出行"
+            }
+       })
+
+    </script>
+</body>
+</html>
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <div id="cun">
+      <p >{{message}}</p>
+      <p >{{num}}</p>
+      <button @click="add">加</button>
+      <button @click="re">减</button>
+   </div>
+
+   <script type="text/javascript">
+       var app = new Vue({
+          el:"#cun",
+          data:{
+            message:"数字变换",
+            num:2
+          },
+          methods:{
+            add:function(){
+              this.num+=5
+            },
+            re:function(){
+              this.num--
+            }
+          },
+       /*   watch:{
+              num:function(a,b){
+                if(a>5){
+                  this.message="我大于5";
+                 
+                }else if(a<5){
+                  this.message="我小于5";
+                   
+                }
+              }
+          }*/
+       })
+
+      app.$watch("num",function(a,b){
+         if(a>5){
+                  this.message="我大于55555";
+                 
+                }else if(a<5){
+                  this.message="我小于5555";
+                   
+                }
+      })
+   </script>
+</body>
+</html> 

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example 扩展</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <h1>example 实例事件</h1>
+    <div id="zhao">
+        {{message}}
+        <p><button @click="add">加加</button></p>
+         <p><button @click="sub">减减</button></p>
+    </div>
+
+     <button onclick="add1()">加我</button> 
+      <button onclick="add2()">一次</button> 
+        <button onclick="add3()">关闭</button> 
+    <script type="text/javascript">
+    var vuedemo =new Vue({
+        el:"#zhao",
+        data:{
+            message:1
+        },
+        methods:{
+            add:function(){
+                this.message++
+            },
+            sub:function(){
+                this.message--
+            }
+        }
+    })
+        
+
+    vuedemo.$on("add1",function(){
+        console.log('执行了外部的add+2;')
+        this.message+=2;
+    })
+    function add1(){
+        vuedemo.$emit("add1") //  需要外部调用 emit
+    }
+
+
+     vuedemo.$once("add2",function(){
+        console.log('执行了外部的add+2;')
+        this.message+=2;
+    })
+    function add2(){
+        vuedemo.$emit("add2") //  once 只能执行一次
+    }
+
+     
+    function add3(){
+        vuedemo.$off("add1") //  off 关闭 关闭的是别的事件
+    }
+
+    </script>
+</body>
+</html>

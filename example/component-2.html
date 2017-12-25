@@ -1,0 +1,71 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件  自定义属性值</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>自定义属性值</h1>
+    <div id="app">
+        <cun :name='mess' :age="con"></cun>
+       
+    </div>
+           <div id="zhao">
+                <com :a='pro1' :b='pro2'></com>
+           </div>
+
+    <script type="text/javascript">
+
+       var app = new Vue({
+            el:'#zhao',
+            data:{
+                pro1:'自定义属性',
+                pro2:'属性二'
+            },
+            components:{
+                com:{
+                    template:'<p style="color:red">这是第一个属性{{a}},第二个属性{{b}}</p>',
+                    props:['a','b']
+                }
+
+            }
+       })
+
+    </script>
+</body>
+</html>
+ -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件  自定义属性值</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <div id="cun">
+       <zhao :a="pro1"></zhao> 
+
+   </div>
+
+   <script type="text/javascript">
+        var app  = new Vue({
+            el:"#cun",
+            data:{
+                pro1:"组件属性1"
+            },
+            components:{
+                zhao:{
+                    template:`<p style="color:red">这是第一个组件的属性值{{a}}</p>`,
+                    props:['a']
+                }
+            }
+
+        })
+
+   </script>
+</body>
+</html>

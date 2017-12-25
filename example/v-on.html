@@ -1,0 +1,85 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>v-on</title>
+    <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <h1>v-on</h1>
+   <hr>
+   <div id="cun">
+       本场得分:{{item}}
+       <p>
+       <button v-on:click="jiafen">加分</button>
+       <button v-on:click="jianfen">减分</button>
+       </p>
+       <input type="text" name="" v-on:keyup.enter='onEnter' v-model='fenshu' >
+       <section></section>
+   </div>
+   <script type="text/javascript">
+       var app = new Vue({
+           el:'#cun',
+           data:{
+               item:0,
+               fenshu:2
+           },
+           methods:{
+               jiafen:function(){
+                   this.item++;
+               },
+               jianfen:function(){
+                   this.item--;
+               },
+               onEnter:function(){
+                   this.item=this.item+parseInt(this.fenshu);
+               }
+           }
+           
+       }
+
+   );
+   
+   </script>
+</body>
+</html>  -->
+
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <div id="cun">
+       <p>{{message}}</p>
+       <button v-on:click="jiafen">加分</button> 
+        <button @click="jianfen">减分</button> 
+        <input type="text" name="" @keyup.enter="onKey" v-model="fenshu">
+
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#cun",
+            data:{
+                message:0,
+                fenshu:0
+            },
+            methods:{
+                jiafen:function() {
+                    return this.message++;
+                },
+                jianfen:function(){
+                    return this.message--;
+                },
+                onKey:function(){
+                    this.message=this.message+parseInt(this.fenshu)
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html> -->

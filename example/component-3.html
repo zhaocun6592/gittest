@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件的继承</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>组件的继承</h1>
+    <div id="app">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        <cun></cun>
+    </div>
+    
+
+    <script type="text/javascript"> 
+ /*   var son={
+            template:`<p style="color:green">我是父子组件</p>`
+        }
+        var cunout={
+            template:`<p >
+            <son></son>
+            </p>`,
+            components:{
+                "son":son
+            }
+        }
+        
+       var app = new Vue({
+        el:'#app',
+        data:{
+            mess:' 这是内容',
+            con:'212310'
+        },
+        components:{
+            "cun":cunout
+        }
+    });*/
+
+    var son1 ={
+        template:`<p>我是继承的组件</p>`
+    }
+    var cun1 ={
+        template:`<son :a="11"></son>`,
+        components:{
+            son:son1,
+            props:['a']
+        }
+
+    }
+
+    var  app = new Vue({
+        el:"#app",
+        data:{
+            message:"这是信息"
+        },
+        components:{
+            cun:cun1
+        }
+    })
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

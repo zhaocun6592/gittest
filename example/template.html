@@ -1,0 +1,65 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+     <script type="template/"></script>
+</head>
+<body>
+    <h1></h1>
+    <div id="cun">
+        {{message}};
+    </div>
+
+    <template id="tt">
+        <p style="color: blue">这是标签模版</p>
+    </template>
+
+    <script type="x-template" id='tt2'>
+          <p style="color: red">这是script模版</p>
+    </script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#cun',
+            data:{
+                message:'这是一个简单的vue实例11'
+            },
+            template:"#tt2"
+        }
+
+    );
+
+    </script>
+</body>
+</html> 
+
+
+<!-- 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+     <script type="template/"></script>
+</head>
+<body>
+   <div id="cun">{{message}}</div>
+   <template id="cun1">
+        <p style="color: red">模版链接</p>
+   </template>
+   <script type="x-template" id="cun2">
+     <p style="">这是script模版</p>
+   </script>
+
+   <script type="text/javascript">
+        var app = new Vue({
+            el:'#cun',
+            template:"#cun2"
+        })
+
+
+   </script>
+</body>
+</html> -->

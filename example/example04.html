@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example 扩展</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <h1>example 内置组件slot</h1>
+    <div id="zhao">
+        <cun>
+        <span slot="a">{{jsname.a}}</span>
+         <span slot="b">{{jsname.b}}</span>
+          <span slot="c">{{jsname.c}}</span>
+        </cun>
+    </div>
+    <template id="tem">
+        <div>
+        <p>这是：<slot name="a"></slot></p>
+            <p>这是：<slot name="b"></slot></p>
+            <p>这是：<slot name="c"></slot></p>
+        </div>
+        
+    </template>
+    
+    <script type="text/javascript">
+    var vuedemo =new Vue({
+        el:"#zhao",
+        data:{
+            jsname:{
+                a:1,
+                b:2,
+                c:3
+            }
+        },
+        components:{
+            "cun":{
+                template:"#tem"
+            }
+        },
+        methods:{
+            add:function(){
+                this.message++
+            },
+            sub:function(){
+                this.message--
+            }
+        }
+    })
+        
+
+   
+
+    </script>
+</body>
+</html>

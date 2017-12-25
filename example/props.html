@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props选项扩展</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>v-props</h1>
+    <hr>
+    <div id="cun">
+         <register></register>
+    </div>
+    <script type="text/javascript">
+        var regi = Vue.extend({
+
+         template:`<div><h2>{{message}}--{{a}}</h2></div>`,
+
+         data:function(){
+            return{
+                message:"propsData选项用于全局扩展时进行数据传递"
+            }
+         },
+         props:["a"]
+    });
+    new regi({propsData:{a:123}}).$mount("register")
+    </script>
+</body>
+</html>

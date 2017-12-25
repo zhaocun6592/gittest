@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-extend</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+  
+</head>
+<body>
+    <h1>vue-extend</h1>
+    <hr>
+    <div id="bind"></div>
+    <div id="cun" >
+    
+    </div>
+    <script type="text/javascript">  
+        var authorExtend=Vue.extend({
+            template:'<p><a :href="href">{{cun}}</a></p>',
+            data:function(){
+                return{
+                    cun:'赵燕存',
+                    href:'http://www.baidu.com'
+                }
+            }
+        });
+        new authorExtend().$mount('#bind');
+/*        var app = new Vue({
+            el:'#cun',
+            data:{
+              num:10,
+                color:'red'
+            },
+            methods:{
+                add:function(){
+                    this.num++;
+                }
+            }
+            
+        }*/
+      
+  
+    
+
+    </script>
+</body>
+</html>
+

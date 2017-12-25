@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mixins</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>mixins</h1>
+    <div id="app">
+        {{num}}
+       <p><button @click="add">加我</button></p>
+    </div>
+ 
+    <script type="text/javascript"> 
+       var mix={
+          updated:function(){
+            console.log('数据发生变化 混入')
+          }
+       }
+       var app = new Vue({
+        el:'#app',
+        data:{
+           num:14,
+         
+        },
+        methods:{
+          add:function(){
+            return this.num++;
+        
+          }
+        },
+        mixins:[mix]
+    });
+    </script>
+  </body>
+  </html>
+
+
+
+
+  <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mixins</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <div id="cun">
+    <p>{{num}}</p>
+    <button @click="add">加加</button>
+
+   </div>
+
+   <script type="text/javascript">
+
+        var min ={
+           updated:function(){
+            alert(2222);
+          }
+        }
+      var app = new Vue({
+        el:'#cun',
+        data:{
+          num:2
+        },
+        updated:function(){
+          alert(111);
+        },
+        methods:{
+          add:function(){
+            this.num++;
+          }
+        },
+        mixins:[min]
+      })
+
+   </script>
+  </body>
+  </html>

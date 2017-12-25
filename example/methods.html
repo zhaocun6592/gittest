@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>methods</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+    <h1>methods</h1>
+    <div id="app">
+      {{message}}  
+      <button @click="add(2,$event)">加</button>  
+      <p><btn @click.native="add(2)"></btn></p>                 
+    </div>
+    <button onclick="app.add(3)">外部调用</button>
+    <script type="text/javascript"> 
+        var newList=[1,2,3,4,5]
+        var btn={
+            template:`<button>点击</button>`
+        }
+       var app = new Vue({
+        el:'#app',
+        data:{
+           message:1
+        },
+        components:{
+            "btn":btn
+        },
+       methods:{
+            add:function(num,event){
+
+                if(num!=''){
+                     return this.message+=num;
+                }else {
+                      return this.message++;
+                }
+                console.log(event);
+            }
+       }
+        
+    });
+
+
+
+    </script>
+

@@ -1,0 +1,111 @@
+<!--  <!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>组件的标签</title>
+    <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <h1>组件的标签</h1>
+   <div id="app">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+       <component v-bind:is="mess"></component>
+       <button @click="add">点我</button>
+   </div>
+   
+
+   <script type="text/javascript"> 
+       var a={
+           template:'<p style="color:red">a</p>'
+       };
+        var b={
+           template:'<p style="color:blue">b</p>'
+       };
+        var c={
+           template:'<p style="color:green">c</p>'
+       };
+       
+      var app = new Vue({
+       el:'#app',
+       data:{
+           mess:'bname',
+           con:'212310'
+       },
+       components:{
+           "aname":a,
+           "bname":b,
+           "cname":c
+       },
+       methods:{
+           add:function() {
+               if(this.mess=='aname'){
+                   this.mess='bname'
+               }else if(this.mess=='bname'){
+                    this.mess='cname'
+               }else{
+                    this.mess='aname' 
+               }
+           }
+       }
+   });
+
+
+
+   </script>
+
+
+</body>
+</html>  -->
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件的标签</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+</head>
+<body>
+   <div id="cun">
+     <component v-bind:is="message"></component>
+     <button @click="add">点击变换</button>
+    
+   </div>
+    
+    <script type="text/javascript">
+     var  app = new Vue({
+        el:'#cun',
+        data:{
+            message:"conA"
+        },
+        components:{
+            "conA":{
+                template:`<p style = 'color:red'>A</p>`
+            },
+            "conB":{
+                template:`<p style = 'color:blue'>b</p>`
+            },
+            "conC":{
+                template:`<p style = 'color:green'>c</p>`
+            }
+        },
+        methods:{
+            add:function(){
+                if(this.message=="conA"){
+                    this.message="conB";
+                } else if(this.message=="conB") {
+                    this.message="conC";
+                }else {
+                    this.message="conA"; 
+                }
+            }
+        }
+     })
+
+    </script>
+
+</body>
+</html> -->

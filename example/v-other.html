@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-other</title>
+     <script type="text/javascript" src='../assets/js/vue.js'></script>
+  
+</head>
+<body>
+    <h1>v-pre v-cloak</h1>
+    <hr>
+    <div id="cun" >
+       <!--    v-pre  不渲染 直接输出 -->
+       <div v-pre>{{message}}</div> 
+
+
+       <!--    v-cloak  渲染完成后 才显示 -->
+        <div v-cloak>{{message}}</div>
+
+         <!--    v-once  只在第一次渲染变化,改变不会跟着变化 -->
+         <div v-once>{{message}}</div>
+        <input type="text" name="" v-model="message">
+
+
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#cun',
+            data:{
+              message:'zhaoyancun',
+           
+            },
+            
+        }
+
+    );
+    
+    </script>
+</body>
+</html>
